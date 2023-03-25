@@ -1,0 +1,163 @@
+header {
+    background-color: #000000;
+    color: #15bdd3;
+    padding: 50px;
+    position: fixed;
+    width: 100%;
+    display: block;
+    margin-top: -15px;
+    margin-left: -10px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin: 0 30px;
+  }
+
+  .menu a {
+    color: #15bdd3;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  .menu li a:hover {
+    background-color: #15bdd3;
+    border-radius: 5px;
+    border:none;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    padding: 10px 20px;
+
+    
+  }
+
+  .menu-toggle {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .menu.show {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #000000;
+      padding: 10px;
+    }
+
+    .menu.show li {
+      margin: 10px 0;
+    }
+  }
+.logo{
+  width: 260px;
+  display: flex;
+  position: absolute;
+  left: 45%;
+  align-items:center;
+  position: fixed;
+  margin-top: -20px;
+}
+
+#mine {
+  background-image: url("mine.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 1550px;
+  height: 733px;
+  position: flex;
+  margin-left: -22px;
+  
+}
+
+.carousel-container {
+  width: 1200px;
+  height: 300px;
+  margin-top: -530px;
+  margin-left: 200px;
+  overflow: hidden;
+}
+
+.carousel-images {
+  width: 2400px;
+  height: 300px;
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+.carousel-images ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel-images li {
+  float: left;
+}
+
+.carousel-images li img {
+  display: block;
+  width: 600px;
+  height: 300px;
+}
+
+.carousel-images.move {
+  transform: translateX(-600px);
+}
+#previous-button {
+  background-color: rgb(0, 0, 0);
+  width: 200px;
+  margin-top: 2px;
+  margin-left: 600px;
+  height: 40px;
+  color: #15bdd3;
+  cursor: pointer;
+  border: none;
+}
+#next-button {
+  background-color: black;
+  width: 200px;
+  margin-top: -100px;
+  height: 40px;
+  color: #15bdd3;
+  cursor: pointer;
+  border: none;
+}
+#verde {
+  width: 4px;
+  height: 6px;
+  margin-top: 10px;
+  margin-left: -5px;
+  background-color: #161515;
+  color: #000000;
+}

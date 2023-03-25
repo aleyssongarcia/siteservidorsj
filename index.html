@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script type="text/javascript" src="script.js"></script>
+    
+    <title>SJ Craft</title>
+</head>
+<body>
+  <header>
+    <img class="logo" src="logo.png" alt="">
+    <nav>
+      <ul class="menu">
+        <li><a href="#" id="botaoinicio" alt=" botão para voltar ao inicio">Inicio</a></li>
+        <li><a href="#" id="botaoloja" alt=" botão para ir ate a loja">Loja</a></li>
+        <li><a href="#" id="botaomidias" alt=" botão para ir ate as midias">Midias</a></li>
+        <li><a href="#" id="botaosobre" alt="botão para ir para sobre">Sobre</a></li>
+      </ul>
+      <button class="menu-toggle">&#9776;</button>
+    </nav>
+  </header>
+  
+  <div class="mine">
+    <img id="mine" src="mine.jpg">
+    <div class="carousel-container">
+        <div class="carousel-images">
+          <ul>
+            <li><img src="imagem1.jpg"></li>
+            <li><img src="imagem2.jpg"></li>
+            <li><img src="imagem3.jpg"></li>
+            <li><img src="imagem4.jpg"></li>
+          </ul>
+        </div>
+    </div>
+    <button id="previous-button">Anterior</button>
+    <button id="next-button">Próximo</button>
+  </div>
+  <div class="verde">
+  </div>
+  
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    function toggleMenu() {
+      menu.classList.toggle('show');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    var carouselImages = document.querySelector('.carousel-images');
+        var imageCount = 0;
+        var imageInterval = setInterval(changeImage, 5000);
+
+        function changeImage() {
+          imageCount++;
+          if (imageCount > 3) {
+            imageCount = 0;
+          }
+          carouselImages.classList.add('move');
+          setTimeout(function() {
+            carouselImages.classList.remove('move');
+          }, 500);
+          carouselImages.style.transform = 'translateX(-' + imageCount * 600 + 'px)';
+        }
+
+        var previousButton = document.querySelector('#previous-button');
+        var nextButton = document.querySelector('#next-button');
+
+        previousButton.addEventListener('click', function() {
+          imageCount--;
+          if (imageCount < 0) {
+            imageCount = 3;
+          }
+          carouselImages.classList.add('move');
+          setTimeout(function() {
+            carouselImages.classList.remove('move');
+          }, 500);
+          carouselImages.style.transform = 'translateX(-' + imageCount * 600 + 'px)';
+        });
+
+        nextButton.addEventListener('click', function() {
+          imageCount++;
+          if (imageCount > 3) {
+            imageCount = 0;
+          }
+          carouselImages.classList.add('move');
+          setTimeout(function() {
+            carouselImages.classList.remove('move');
+          }, 500);
+          carouselImages.style.transform = 'translateX(-' + imageCount * 600 + 'px)';
+        });
+
+  </script>
+</body>
+</html>
